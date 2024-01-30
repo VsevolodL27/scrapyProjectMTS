@@ -14,13 +14,21 @@ NEWSPIDER_MODULE = "scrapyWikiProject.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "scrapyWikiProject (+http://www.yourdomain.com)"
+USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 "
+              "Safari/605.1.15")
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
+# Desired file format
+FEEDS = {
+    "movies.csv": {
+        "format": "csv",
+        "overwrite": True
+    }
+}
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -45,7 +53,7 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "scrapyWikiProject.middlewares.ScrapywikiprojectSpiderMiddleware": 543,
+#    "scrapyWikiProject.middlewares.ScrapyWikiProjectSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
@@ -63,7 +71,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "scrapyWikiProject.pipelines.ScrapywikiprojectPipeline": 300,
+#    "scrapyWikiProject.pipelines.ScrapyWikiProjectPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
